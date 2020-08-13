@@ -1,0 +1,9 @@
+.applet-holder {
+  width: 100%;
+  background: #efefef;
+  height: 40px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-top: 15px;
+}
