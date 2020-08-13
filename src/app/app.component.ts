@@ -58,6 +58,10 @@ onSearchApplets (search){
       
       chosenApplets.push(this.lib.applets[i].name)
       this.lib.categories = this.lib.applets[i].categories 
+    } else if(search == "") {
+      this.lib.categories = ['Performance','Investments','Operations']
+    } else {
+      this.lib.categories =[]
     }
   }
   this.applet = chosenApplets
