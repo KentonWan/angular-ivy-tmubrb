@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class CategoriesComponent  {
   @Input() category: string;
-  @Input() number: number;
+  @Input() count: number;
 }

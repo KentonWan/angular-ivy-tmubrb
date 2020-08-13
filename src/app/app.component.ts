@@ -9,6 +9,7 @@ export class AppComponent  {
   name = 'Library ';
   title = 'Kenton';
   applet = [];
+  
 
 
 
@@ -23,7 +24,7 @@ lib = {
  },
  {
  name: 'Commitment Widget',
- categories: ['Investments']
+ categories: ['Investments','Performance']
  },
  {
  name: 'CMS',
@@ -31,6 +32,8 @@ lib = {
  }
  ]
  }; 
+
+ count = this.lib.applets;
 
  onCategoryClick(category) {
   
@@ -51,19 +54,36 @@ lib = {
 
 onSearchApplets (search){
   
-  let chosenApplets =[]
+  let chosenApplets =[];
+  let updatedCategories =[];
   
   for(let i=0; i < this.lib.applets.length; i++){
     if(search.toLowerCase() === this.lib.applets[i].name.toLowerCase()){
       
       chosenApplets.push(this.lib.applets[i].name)
-      this.lib.categories = this.lib.applets[i].categories 
+      updatedCategories = this.lib.applets[i].categories;
+      this.lib.categories = updatedCategories;
+      console.log("yes")
     } else if(search == "") {
       this.lib.categories = ['Performance','Investments','Operations']
-    } else {
-      this.lib.categories =[]
+      console.log("else if")
     }
   }
-  this.applet = chosenApplets
+  this.applet = chosenApplets;
+
+};
+
+countCategories (category){
+  
+  let number = 0;
+  
+  for (let i=0; i < this.lib.applets.length; i++){
+    for (let j=0; j < this.lib.applets[i].categories.length;j++){
+      if(category === this.lib.applets[i].categories[j]){
+        number++
+      }
+    }
+  }
+  return number
 }
 }

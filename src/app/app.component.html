@@ -4,9 +4,9 @@
     
     <h3>Categories</h3>
     <input class="search-applets" (keyup)="onSearchApplets(searchApplet.value)" [value]="" #searchApplet placeholder="Search applets"/>
-    <categories (click)="onCategoryClick(categoryInput.category)" [category]="lib.categories[0]" #categoryInput></categories><br>
-    <categories (click)="onCategoryClick(categoryInput2.category)" [category]="lib.categories[1]" #categoryInput2></categories><br>
-    <categories (click)="onCategoryClick(categoryInput3.category)" [category]="lib.categories[2]" #categoryInput3></categories>
+    <categories (click)="onCategoryClick(categoryInput.category)" [category]="lib.categories[0]" [count]="countCategories(lib.categories[0])" #categoryInput></categories><br>
+    <categories (click)="onCategoryClick(categoryInput2.category)" [category]="lib.categories[1]" [count]="countCategories(lib.categories[1])" #categoryInput2></categories><br>
+    <categories (click)="onCategoryClick(categoryInput3.category)" [category]="lib.categories[2]" [count]="countCategories(lib.categories[3])" #categoryInput3></categories>
   </div>
   <div class="float-right">
     <h3>Applets</h3>
